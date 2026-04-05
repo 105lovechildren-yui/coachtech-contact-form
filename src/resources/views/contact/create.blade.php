@@ -12,7 +12,7 @@
         <h2 class="contact-form__heading">Contact</h2>
 
         {{-- TODO: バリデーション実装時にフォーム全体のエラーメッセージ表示を追加する --}}
-        <form class="contact-form__form" action="" method="post">
+        <form class="contact-form__form" action="{{ route('contact.confirm') }}" method="post">
             @csrf
 
             <div class="contact-form__group">
@@ -34,15 +34,15 @@
                 </div>
                 <div class="contact-form__field contact-form__field--radio">
                     <label class="contact-form__radio-label">
-                        <input class="contact-form__radio" type="radio" name="gender" value="male" @checked(old('gender', 'male' )==='male' )>
+                        <input class="contact-form__radio" type="radio" name="gender" value="1" @checked(old('gender', '1') === '1')>
                         <span class="contact-form__radio-text">男性</span>
                     </label>
                     <label class="contact-form__radio-label">
-                        <input class="contact-form__radio" type="radio" name="gender" value="female" @checked(old('gender')==='female' )>
+                        <input class="contact-form__radio" type="radio" name="gender" value="2" @checked(old('gender') === '2')>
                         <span class="contact-form__radio-text">女性</span>
                     </label>
                     <label class="contact-form__radio-label">
-                        <input class="contact-form__radio" type="radio" name="gender" value="other" @checked(old('gender')==='other' )>
+                        <input class="contact-form__radio" type="radio" name="gender" value="3" @checked(old('gender') === '3')>
                         <span class="contact-form__radio-text">その他</span>
                     </label>
                 </div>

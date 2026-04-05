@@ -10,12 +10,22 @@ Dockerビルド
 
 ## Laravel環境構築
 
-・docker-compose exec php bash
-・composer install
+1. コンテナの起動
+   docker-compose up -d
+2. パッケージのインストール
+   docker-compose exec php composer install
+   <!-- 3. アプリケーションキーの生成 -->
+   docker-compose exec php php artisan key:generate
+3. 権限エラー回避のためユーザーを指定してphpコンテナに入る
+   docker-compose exec -u www-data php bash
+4. マイグレーションの実行（権限指定）
+   docker-compose exec -u www-data php php artisan migrate
+   <!-- 5. シーディングの実行（カテゴリーデータの作成） -->
+   docker-compose exec -u www-data php php artisan db:seed
 
-<!-- ・php artisan key:generate -->
-<!-- ・php artisan migrate
-・php artisan db:seed -->
+## 開発時の注意点（権限エラーが発生する場合）
+マイグレーションファイルの作成や実行時に Permission denied が発生する場合は、以下のコマンドでディレクトリの権限を更新
+`docker-compose exec php chmod -R 777 storage database/migrations`
 
 ## 開発環境
 
