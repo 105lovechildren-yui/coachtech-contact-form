@@ -11,7 +11,7 @@
     <div class="contact-form__inner">
         <h2 class="contact-form__heading">Confirm</h2>
 
-        <form class="contact-form__form" action="{{ route('contact.thanks') }}" method="post">
+        <form class="contact-form__form" action="{{ route('contact.store') }}" method="post">
             @csrf
 
             <table class="contact-confirm__table">

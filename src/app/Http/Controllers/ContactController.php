@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
@@ -13,7 +14,7 @@ class ContactController extends Controller
         ]);
     }
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $categories = $this->categories();
         $selectedCategory = $categories->firstWhere('id', (int) $request->input('category_id'));
@@ -65,7 +66,7 @@ class ContactController extends Controller
         return $labels[$gender] ?? '';
     }
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         $contactData = [
             'last_name' => $request->input('last_name', ''),
@@ -79,11 +80,7 @@ class ContactController extends Controller
             'detail' => $request->input('detail', ''),
         ];
 
-        // TODO: Contactモデル実装後に、保存処理を追加する
-        // TODO: Contact::create() には $request->all() ではなく、上で明示した保存項目だけを渡す
-        // TODO: 電話番号は配列のままではなく、$contactData['tel'] のように文字列へ整形してから保存する
-        // TODO: category_id などは、実際のテーブルカラム構成に合わせてキー名・保存値を調整する
-        // Contact::create($contactData);
+        Contact::create($contactData);
 
         return redirect()->route('contact.thanks');
     }
