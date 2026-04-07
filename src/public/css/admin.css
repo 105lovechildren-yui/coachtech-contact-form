@@ -1,0 +1,373 @@
+.admin-page {
+	background: #ffffff;
+	color: #8e7d6d;
+	padding: 48px 20px 80px;
+}
+
+.admin-page__logout-button {
+	min-width: 100px;
+	padding: 8px 16px;
+	border: 1px solid #d9c6b5;
+	background: #f0ece7;
+	color: #d9c6b5;
+	font-size: 20px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.admin-page__inner {
+	max-width: 1230px;
+	margin: 0 auto;
+}
+
+.admin-page__heading {
+	margin: 0 0 48px;
+	color: #8e7d6d;
+	font-size: 35px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.admin-page__search-form {
+	margin-bottom: 32px;
+}
+
+.admin-page__filters {
+	display: grid;
+	grid-template-columns: minmax(280px, 2.2fr) minmax(120px, 1fr) minmax(180px, 1.2fr) minmax(160px, 1fr) auto auto;
+	gap: 24px;
+	align-items: center;
+	padding: 40px;
+	background: #ffffff;
+	box-sizing: border-box;
+}
+
+.admin-page__input,
+.admin-page__select {
+	width: 100%;
+	padding: 14px 18px;
+	border: 1px solid transparent;
+	background: #f4f4f4;
+	box-sizing: border-box;
+	color: #4b3a2f;
+	font-size: 14px;
+	font-family: inherit;
+}
+
+.admin-page__input::placeholder {
+	color: #beb1a6;
+}
+
+.admin-page__select {
+	appearance: none;
+	background-image: linear-gradient(45deg, transparent 50%, #8b7969 50%), linear-gradient(135deg, #8b7969 50%, transparent 50%);
+	background-position: calc(100% - 24px) calc(50% - 3px), calc(100% - 18px) calc(50% - 3px);
+	background-size: 6px 6px, 6px 6px;
+	background-repeat: no-repeat;
+	color: #8b7969;
+}
+
+.admin-page__input--date {
+	color: #8b7969;
+}
+
+.admin-page__button,
+.admin-page__export-button,
+.admin-page__pagination-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.admin-page__button {
+	min-width: 100px;
+	padding: 12px 20px;
+	border: 1px solid transparent;
+	font-size: 16px;
+}
+
+.admin-page__button--search {
+	background: #8b7969;
+	border-color: #8b7969;
+	color: #ffffff;
+}
+
+.admin-page__button--reset {
+	background: #d9c6b5;
+	border-color: #d9c6b5;
+	color: #ffffff;
+}
+
+.admin-page__toolbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 24px;
+	margin-bottom: 24px;
+}
+
+.admin-page__export-button {
+	min-width: 148px;
+	padding: 8px 16px;
+	border: 1px solid #e0d9d2;
+	background: #f4ede7;
+	color: #8b7969;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.admin-page__pagination {
+	display: inline-flex;
+	align-items: center;
+	border: 1px solid #e0d9d2;
+	background: #ffffff;
+}
+
+.admin-page__pagination-button {
+	min-width: 44px;
+	height: 44px;
+	padding: 0 12px;
+	border: none;
+	border-right: 1px solid #e0d9d2;
+	background: transparent;
+	color: #8b7969;
+	font-size: 16px;
+}
+
+.admin-page__pagination-button:last-child {
+	border-right: none;
+}
+
+.admin-page__pagination-button--active {
+	background: #8b7969;
+	color: #ffffff;
+}
+
+.admin-page__pagination-button--disabled {
+	background: #f4f4f4;
+	color: #beb1a6;
+	cursor: default;
+}
+
+.admin-page__table-wrap {
+	overflow-x: auto;
+	border: 1px solid #e0d9d2;
+	background: #ffffff;
+}
+
+.admin-page__table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 880px;
+}
+
+.admin-page__table-row {
+	border-bottom: 1px solid #e0d9d2;
+}
+
+.admin-page__table-row:last-child {
+	border-bottom: none;
+}
+
+.admin-page__table-row--head {
+	background: #8b7969;
+}
+
+.admin-page__table-header,
+.admin-page__table-cell {
+	padding: 24px 32px;
+	font-size: 16px;
+	text-align: left;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.admin-page__table-header {
+	color: #ffffff;
+	font-weight: 700;
+}
+
+.admin-page__table-header--compact,
+.admin-page__table-cell--compact {
+	padding-left: 5px;
+}
+
+.admin-page__table-header--action,
+.admin-page__table-cell--action {
+	width: 110px;
+	text-align: center;
+}
+
+.admin-page__table-cell {
+	color: #8e7d6d;
+	background: #ffffff;
+}
+
+.admin-page__detail-button {
+	min-width: 76px;
+	padding: 8px 16px;
+	border: 1px solid #d9c6b5;
+	background: #f4ede7;
+	color: #8b7969;
+	font-size: 14px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.admin-page__modal {
+	width: min(90vw, 720px);
+	padding: 0;
+	border: none;
+	background: transparent;
+}
+
+.admin-page__modal::backdrop {
+	background: rgba(75, 58, 47, 0.45);
+}
+
+.admin-page__modal-content {
+	position: relative;
+	padding: 64px 56px;
+	background: #ffffff;
+	box-sizing: border-box;
+}
+
+.admin-page__modal-close {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 1px solid #8b7969;
+	border-radius: 50%;
+	background: #ffffff;
+	color: #8b7969;
+	font-size: 18px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.admin-page__detail-list {
+	margin: 0;
+	padding: 0;
+}
+
+.admin-page__detail-row {
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	gap: 24px;
+	margin-bottom: 32px;
+	align-items: start;
+}
+
+.admin-page__detail-row:last-child {
+	margin-bottom: 0;
+}
+
+.admin-page__detail-label,
+.admin-page__detail-value {
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.7;
+	color: #8b7969;
+}
+
+.admin-page__detail-label {
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.admin-page__detail-value--multiline {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.admin-page__delete-form {
+	margin-top: 48px;
+	text-align: center;
+}
+
+.admin-page__delete-button {
+	min-width: 120px;
+	padding: 12px 20px;
+	border: 1px solid #ba370d;
+	background: #ba370d;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.admin-page__table-cell--empty {
+	text-align: center;
+}
+
+@media screen and (max-width: 1100px) {
+	.admin-page__filters {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.admin-page__button {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.admin-page {
+		padding: 32px 16px 56px;
+	}
+
+	.admin-page__heading {
+		margin-bottom: 32px;
+		font-size: 30px;
+	}
+
+	.admin-page__filters {
+		grid-template-columns: 1fr;
+		padding: 24px;
+		gap: 16px;
+	}
+
+	.admin-page__toolbar {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.admin-page__export-button {
+		width: 100%;
+	}
+
+	.admin-page__pagination {
+		justify-content: center;
+		width: 100%;
+		overflow-x: auto;
+	}
+
+	.admin-page__table-header,
+	.admin-page__table-cell {
+		padding: 18px 20px;
+	}
+
+	.admin-page__modal-content {
+		padding: 56px 24px 32px;
+	}
+
+	.admin-page__detail-row {
+		grid-template-columns: 1fr;
+		gap: 8px;
+		margin-bottom: 24px;
+	}
+
+	.admin-page__detail-label,
+	.admin-page__detail-value {
+		font-size: 16px;
+	}
+
+	.admin-page__delete-form {
+		margin-top: 32px;
+	}
+}

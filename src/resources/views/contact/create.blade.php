@@ -122,13 +122,16 @@
                     <label class="contact-form__label" for="category_id">お問い合わせの種類</label>
                     <span class="contact-form__required">※</span>
                 </div>
+
                 <div class="contact-form__field">
                     <select class="contact-form__select @error('category_id') contact-form__input--error @enderror" name="category_id" id="category_id">
-                        <option value="" disabled @selected(!old('category_id'))>選択してください</option>
+                        <option value="" disabled {{ !old('category_id') ? 'selected' : '' }}>選択してください</option>
+
                         @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" @selected(old('category_id')==$category->id)>{{ $category->content }}</option>
+                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->content }}</option>
                         @endforeach
                     </select>
+
                     @error('category_id')
                     <p class="contact-form__error">{{ $message }}</p>
                     @enderror
