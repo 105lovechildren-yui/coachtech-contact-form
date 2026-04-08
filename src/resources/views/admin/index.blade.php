@@ -18,7 +18,7 @@
     <div class="admin-page__inner">
         <h2 class="admin-page__heading">Admin</h2>
 
-        <form class="admin-page__search-form" action="{{ route('admin.index') }}" method="get">
+        <form class="admin-page__search-form" action="{{ route('admin.search') }}" method="get">
             <div class="admin-page__filters">
                 <input class="admin-page__input admin-page__input--keyword" type="text" name="keyword" value="{{ $filters['keyword'] }}" placeholder="名前やメールアドレスを入力してください">
 
@@ -40,12 +40,12 @@
                 <input class="admin-page__input admin-page__input--date" type="date" name="contact_date" value="{{ $filters['contact_date'] }}">
 
                 <button class="admin-page__button admin-page__button--search" type="submit">検索</button>
-                <a class="admin-page__button admin-page__button--reset" href="{{ route('admin.index') }}">リセット</a>
+                <a class="admin-page__button admin-page__button--reset" href="{{ route('admin.reset') }}">リセット</a>
             </div>
         </form>
 
         <div class="admin-page__toolbar">
-            <button class="admin-page__export-button" type="button">エクスポート</button>
+            <a class="admin-page__export-button" href="{{ route('admin.export', request()->query()) }}">エクスポート</a>
 
             <div class="admin-page__pagination">
                 @if ($contacts->onFirstPage())
